@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+<body>
+
+
+    <div id="navbar">
+        <div id="navbar_logo" href="#"><img src="{% static 'media/logo.gif' %}" alt="logo" width="100px" height="100px"></div>
+        <div id="navbar_b">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'lista_produtos' %}">Produtos</a>
+            <a href="#sobre">Sobre</a>
+        </div>
+        <div id="navbar_login">
+            <a href="#login">Login/Cadastro</a>
+        </div>
+    </div>
+
+    {% block 'conteudo'%}
+    
+    {% endblock %}
+
+
+<div class="rodape">
+    <p>&copy; 2024 E-ciclo, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="{% static 'script.js' %}"></script>
+</html>

@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{% block 'conteudo'%}
+    <div class="grid-container">
+        {% for produtos in produto %}
+            <div>
+                <div>Título {{ produtos.nome_produto }}</div>
+                <div>
+                    <img src="{{ produtos.img }}" alt="{{ produtos.nome_produto }}" width="100%" height="100%">
+                </div>
+                <div>
+                    <text>Descrição {{ produtos.descricao }}</text>
+                </div>
+                <div>
+                    <text>Preço R$ {{ produtos.preco }}</text>
+                </div>
+                <div>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

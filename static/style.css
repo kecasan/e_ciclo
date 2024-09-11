@@ -1,0 +1,182 @@
+body, html {
+  height: 100%;
+  font-family: SUSE-Medium;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: SUSE-Medium;
+  src: url("SUSE-Medium.ttf");
+}
+
+/* Estilo do navbar */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  transition: background 0.5s ease;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#navbar_logo {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 0;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+#navbar_b {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+#navbar a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+}
+
+#navbar_login {
+  margin-left: auto;
+}
+
+.rodape {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.square {
+  float: left;
+  width: 500px;
+  height: 500px;
+  margin: 10px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content {
+  padding: 16px;
+}
+
+.caption {
+  position: relative;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.parallax1, .parallax2, .parallax3, .parallax4 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.parallax1 {
+  background-image: url('media/man-5963976_1920.jpg');
+}
+
+.parallax2 {
+  background-image: url('media/background.png');
+}
+
+.parallax3 {
+  background-image: url('media/phone-3823126_1920.jpg');
+}
+
+.parallax4 {
+  background-image: url('media/background.png');
+}
+
+.grid-container {
+  border: 1px solid black;
+  background-color: mintcream;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 35px;
+}
+
+.grid-container > div {
+  border: 1px solid black;
+  background-color: yellow;
+  border-radius: 6px;
+  width: 200px;
+  height: 300px;
+  -ms-flex-item-align: start;
+}
+
+.grid-container_interno {
+  align-self: center;
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax1, .parallax2, .parallax3, .parallax4 {
+    background-attachment: scroll;
+  }
+}
+
+
+/* Estilo do navbar para dispositivos móveis */
+@media only screen and (max-width: 768px) {
+#navbar {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#navbar_b {
+  margin: 10px 0;
+}
+
+#navbar_login {
+  margin-top: 10px;
+}
+}
+
+/* Ajustar altura das seções de parallax */
+@media only screen and (max-width: 768px) {
+.parallax1, .parallax2, .parallax3, .parallax4 {
+  height: 50vh; /* Ajuste a altura para dispositivos móveis */
+}
+}
