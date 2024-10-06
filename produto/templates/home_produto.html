@@ -1,0 +1,46 @@
+
+{%extends 'base.html'%}
+
+{%block 'head'%}
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+{%endblock%}
+
+{% block 'conteudo'%}
+<div class="parallax1">
+    <div class="caption">
+        <span class="border">Olá Mundo</span>
+        {% for produto in produtos %}
+
+        {% if produto.ativo %}
+        <div class="col-sm">
+          <div class="cont">
+              <img class="tamanhoImg" style=" margin-top: 20px;" src="/media/{{produto.img}}">
+          </div>
+          <h1 style="width: 350px;" class="nome titulo bordaBottom">{{produto.nome_produto}}</h1>
+          <h2 class="rosa">Descrição:</h2>
+          <h2 style="width: 350px; color:white;" class="descricao bordaBottom">{{produto.descricao}}</h2>
+          <h1 class="rosa">R$ {{produto.preco}}0</h1>
+          <a style="margin-top: 20px;" href="{% url 'produto' id=produto.id %}" class="botao">Adicionar ao carrinho</a>
+          <a href="{% url 'produto' id=produto.id %}">Ver Produto</a>
+          <br>
+          <br>
+        </div>
+          {% endif %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categorias
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          
+              {% for i in categorias %}
+              <a class="dropdown-item" href="#">{{i}}</a>
+              {%endfor%}
+             
+            </div>
+          </li>
+      {% endfor %}  
+
+    </div>
+</div>
+
+{%endblock%}

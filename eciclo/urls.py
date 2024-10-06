@@ -3,13 +3,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from produto import views
-from produto.views import lista_produtos
+from produto.views import Produto
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.home, name='home'),
-    path("produtos/", views.lista_produtos, name='lista_produtos'),
+    path(" ", include('produto.urls')),
     path("cadastro/", include('cadastro.urls')),
 
 ]
