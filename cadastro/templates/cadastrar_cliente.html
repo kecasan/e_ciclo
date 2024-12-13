@@ -1,26 +1,32 @@
 {% extends 'base.html' %}
 
 {% block 'conteudo' %}
-<h1>Cadastro de Cliente</h1>
 
-<form method="post" action="{% url 'cadastrar_cliente' %}">
-  {% csrf_token %}
-
-  <div class="form-group">
-    <label for="username">Nome de Usuário:</label>
-    <input type="text" class="form-control" id="username" name="username" required>
+{% load static %}
+<div class="main-cadastro">
+  <div class="left-cadastro">
+    <div class="card-cadastro">
+      <h1>Cadastro</h1>
+        <form method="post" class="textfield" action="{% url 'cadastrar_cliente' %}">
+          {% csrf_token %}
+          <div class="textfield-cadastro">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" placeholder="Usuário" required>    
+          </div>
+          <div class="textfield-cadastro">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Senha" required>
+          </div>
+          <div class="textfield-cadastro">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+        </form>
+      <button type="submit" class="btn-cadastro">Cadastrar</button>
+    </div>
   </div>
-
-  <div class="form-group">
-    <label for="password">Senha:</label>
-    <input type="password" class="form-control" id="password" name="password" required>
+  <div class="right-cadastro">
+    <img src="{% static 'media/environment-animate.svg' %}" class="right-cadastro-img" alt="world">
   </div>
-
-  <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" class="form-control" id="email" name="email" required>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Cadastrar</button>
-</form>
+</div>
 {% endblock %}
