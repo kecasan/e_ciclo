@@ -10,30 +10,19 @@
   <div class="right-login">
     <div class="card-login">
       <h1>Login</h1>
-      <div class="textfield">
-        <label for="username">Usuário</label>
-        <input type="text" id="username" name="username" placeholder="Usuário" required>
-      </div>
-      <div class="textfield">
-        <label for="password">Senha</label>
-        <input type="password" id="password" name="password" placeholder="Senha" required>    
-      </div>
+        <form method="post" class="textfield" action="{% url 'realizar_login' %}">
+          {% csrf_token %}
+          <div class="textfield">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" placeholder="Usuário" required>
+          </div>
+          <div class="textfield">
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Senha" required>    
+          </div>
+        </form>
       <button type="submit" class="btn-login">Login</button>
     </div>
   </div>
 </div>
-
-
-
-
-<form method="post" action="{% url 'realizar_login' %}">
-  {% csrf_token %}
-
-  <div class="form-group">
-  </div>
-
-  <div class="form-group">
-  </div>
-
-</form>
 {% endblock %}
