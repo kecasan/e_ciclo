@@ -13,9 +13,9 @@ body, html {
 }
 
 * {
-  box-sizing: border-box; /* Inclui padding e bordas na largura total */
   margin: 0; /* Remove margens padrão */
   padding: 0; /* Remove padding padrão */
+  box-sizing: border-box; /* Inclui padding e bordas na largura total */
 }
 
 /* Estilo do navbar */
@@ -368,5 +368,3 @@ button:hover {
   font-size: 24px;
   margin-top: 20px;
 }
-
-
